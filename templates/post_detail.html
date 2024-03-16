@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog | {{ post.title }}{% endblock title %}
+
+<!-- navigation -->
+{% block navigation %}
+    
+    <a href="{% url 'home' %}">
+        <div class="logo-border">
+            <div class="logo">
+                <h1>Blogger.</h1>
+            </div>
+        </div>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">home</a></li>
+        <li><a href="{% url 'posts' %}">blog</a></li>
+        <li><a href="{% url 'about' %}">about</a></li>
+    </ul>
+
+    <div class="create">
+        <a href="{% url 'post_create' %}" class="btn btn-create">create post</a>
+    </div>
+{% endblock navigation %}    
+
+<!-- page content -->
+{% block content %}
+<div class="wrapper">
+    <div class="post-container">
+        <div class="card">
+            <div class="card-header header-2">
+                <div class="header-info">
+                    <h4 class="user">{{ post.author.username }}</h4>
+                    <h5 class="date">{{ post.published }}</h5>
+                </div>
+                <div class="card-edit">
+                    <a href="{% url 'post_update' post.pk %}" class="icon"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a href="{% url 'post_delete' post.pk %}" class="icon"><i class="fa-regular fa-trash-can"></i></a>
+                </div>
+            </div>
+            <h2 class="post-title title-2">{{ post.title }}</h2>
+            <div class="card-content">
+                <p>{{ post.body }}</p>
+            </div>
+            <hr>
+            <div class="comments">
+                <p>comments</p>
+            </div>
+        </div>  
+    </div>
+
+    <div class="article-container">
+        <div class="card">
+            <h3>Active Discussions</h3>
+            <hr style="margin: 10px 5px;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ipsam quod, veritatis temporibus neque velit voluptatem quas. Distinctio exercitationem nisi, cumque dolore totam, rem officia quos magnam omnis 
+            </p>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

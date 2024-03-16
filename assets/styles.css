@@ -1,0 +1,473 @@
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1em;
+    background-color: #FAF6F6;
+    color: #32292F;
+}
+
+.btn {
+    text-decoration: none;
+    border: 2px solid #455561;
+    border-radius: 20px;
+    background: transparent;
+    color: #455561;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #455561;
+    color: #F7FFF6;
+    transition: all ease-in-out 0.3s;
+}
+
+.icon {
+    font-size: 1.3em;
+    padding-left: 10px;
+    color: #455561;
+}
+
+.icon:hover {
+    font-size: 1.2em;
+    transition: all ease-in-out 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #F1F2EB;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 3px 3px 12px #C3C3C3;
+}
+
+.logo-border {
+    border: 5px solid #455561;
+    margin-left: 30px;
+}
+
+.logo {
+    background-color: #455561;
+    margin: 3px;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 6px;
+    color: #F7FFF6;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    padding-left: 40px;
+}
+
+.nav-links li a {
+    color: #455561;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.nav-links li a:hover {
+    border-bottom: 2px solid #455561;
+    padding-bottom: 6px;
+    transition: all ease-in-out 0.3s;
+}
+
+/* wrapper */
+.wrapper {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+/* posts */
+.post-container {
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .card-header {
+    padding: 10px 30px;
+}
+
+.card .header-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.card .card-header .user {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #4A4A48;
+    text-transform: capitalize;
+}
+
+.card .card-header .date {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #888;
+}
+
+.card .post-title {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px 30px;
+    color: #455561;
+    text-transform: capitalize;
+}
+
+.card .title-2 {
+    font-size: 4em;
+}
+
+.card .post-title a {
+    color: #455561;
+}
+
+.card .card-content {
+    padding: 10px 30px;
+    word-spacing: 0.2em;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #343633;
+}
+
+.card .comments {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: 400;
+    color: #666;
+}
+
+/* articles */
+.article-container {
+    width: 40%;
+}
+
+.article-container .card {
+    padding: 30px;
+}
+
+/* create post */
+.create-header {
+    width: 65%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.create-header h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #455561;
+}
+
+.form-card {
+    width: 65%;
+    /* height: 60vh; */
+    margin: auto;
+}
+
+.form-card label {
+    display: none;
+}
+
+.form-card #id_title, #id_body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    padding: 10px;
+}
+
+.form-card #id_title {
+    border-top: 2px solid #F1F2EB;
+    border-left: 2px solid #F1F2EB;
+    border-right: 2px solid #F1F2EB;
+    border-bottom: 20px solid #F1F2EB;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    height: 15vh;
+    outline: none;
+}
+
+.form-card #id_body {
+    border-top: none;
+    border-left: 2px solid #F1F2EB;
+    border-right: 2px solid #F1F2EB;
+    border-bottom: 2px solid #F1F2EB;
+    padding-top: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    height: 50vh;
+    outline: none;
+}
+
+.form-card #id_author {
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 0.6;
+    color: #455561;
+    margin-bottom: 10px;
+    border: 2px solid #F1F2EB;
+    outline: none;
+}
+
+/* delete */
+.delete-wrapper {
+    background-color: white;
+    width: 40%;
+    height: 40vh;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    border: 2px solid #F1F2EB;
+    border-radius: 5px;
+}
+
+.delete-wrapper h2 {
+    font-size: 1.2em;
+    color: #455561;
+    padding-top: 10px;
+}
+
+.delete-wrapper p {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.delete-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 35px;
+}
+
+.delete-wrapper .btn {
+    margin-top: 15px;
+}
+
+/* about page */
+.about-container {
+    background: white;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px 60px;
+    border: 2px solid #F1F2EB;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    word-spacing: 0.1em;
+    letter-spacing: 0.02em;
+}
+
+.about-container h1 {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #455561;
+}
+
+.about-container h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #455561;
+    margin-top: 20px;
+}
+
+.about-container p {
+    font-size: 1em;
+    font-weight: 600;
+    color: #111;
+    margin-top: 20px;
+}
+
+/* home page */
+
+/* header */
+header {
+    width: 70%;
+    margin: 100px 0px 110px 50px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+header p {
+    font-weight: 500;
+    color: #343633;
+    margin: 10px 0 20px 0;
+}
+
+/* categories */
+.categories {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.categories h2 {
+    text-align: center;
+    margin: 20px 0;
+    text-transform: capitalize;
+    font-size: 1.7em;
+}
+
+.categories .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.categories .sub-card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 3px 3px 12px #C3C3C3;
+}
+
+.categories .sub-card h3 {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: #222;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+
+.categories .sub-card p {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #343633;
+    padding-bottom: 10px;
+}
+
+.categories .sub-card a {
+    font-size: 0.8em;
+    color: #455561;
+}
+
+.categories .sub-card a:hover {
+    border-bottom: 1px solid #455561;
+    transition: all ease-in 0.3s;
+    cursor: pointer;
+}
+
+/* login and sign up pages */
+.login-wrapper {
+    width: 50%;
+    margin: auto;
+    background: white;
+    border: 2px solid #F1F2EB;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.login-wrapper h1 {
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+}
+
+.login-form {
+    width: 80%;
+    margin: auto;
+}
+
+.login-wrapper .login-form p {
+    padding-bottom: 20px;
+}
+
+.login-wrapper .login-form p label {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #455561;
+}
+
+.login-wrapper .login-form p input {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #333;
+    margin-top: 8px;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #F1F2EB;
+    border-radius: 5px;
+    background: whitesmoke;
+    padding-left: 10px;
+    outline: none;
+}
+
+.login-wrapper small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login-wrapper .login-form .errorlist {
+    color: #f88379;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.login-wrapper .login-form ul {
+    display: none;
+}
+
+.login-wrapper .login-form .helptext {
+    display: none;
+}

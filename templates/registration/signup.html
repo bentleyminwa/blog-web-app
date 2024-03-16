@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog | signup {% endblock title %}
+
+<!-- navigation -->
+{% block navigation %}
+    
+    <a href="{% url 'home' %}">
+        <div class="logo-border">
+            <div class="logo">
+                <h1>Blogger.</h1>
+            </div>
+        </div>
+    </a>
+    
+{% endblock navigation %}
+
+{% block login_content %}
+    <div class="login-wrapper">
+        <h1>sign up</h1>
+
+        <form action="" method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="sign up" class="btn btn-signup">
+        </form>
+
+        <small>Already have an account? <a href="{% url 'login' %}"> login</a></small>
+    </div>
+    
+{% endblock login_content %}

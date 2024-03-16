@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- meta data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- page title -->
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!--rubik font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/8d85e9e3a7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <!-- navigation -->
+    <div class="navbar">
+        {% block navigation %}
+    
+        {% endblock navigation %}
+    </div>
+
+    <!-- page content -->
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- login content -->
+        {% block login_content %}
+
+        {% endblock login_content %}
+
+    <!-- create post content -->
+    <div class="create-wrapper">
+        {% block create %}
+
+        {% endblock create %}
+    </div>
+
+    <!-- delete post content -->
+        {% block delete %}
+
+        {% endblock delete %}
+
+    <!-- page footer -->
+    <footer class="footer">
+        {% block footer %}
+        {% endblock footer %}
+    </footer>
+    
+</body>
+</html>

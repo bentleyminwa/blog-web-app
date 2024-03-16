@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog | Create Post{% endblock title %}
+
+<!-- navigation -->
+{% block navigation %}
+    
+    <a href="{% url 'home' %}">
+        <div class="logo-border">
+            <div class="logo">
+                <h1>Blogger.</h1>
+            </div>
+        </div>
+    </a>
+
+{% endblock navigation %}    
+
+<!-- page content -->
+{% block create %}
+
+    <div class="create-header">
+        <h2>Create Post</h2>
+        <a href="{% url 'posts' %}" class="icon"><i class="fa-regular fa-circle-xmark"></i></a>
+    </div>
+
+    <form action="" method="post" class="form-card">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-create">publish</button>
+    </form>
+
+{% endblock create %}

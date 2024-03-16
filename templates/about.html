@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog | about {% endblock title %}
+
+{% block navigation %}
+    <a href="{% url 'home' %}">
+        <div class="logo-border">
+            <div class="logo">
+                <h1>Blogger.</h1>
+            </div>
+        </div>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">home</a></li>
+        <li><a href="{% url 'posts' %}">blog</a></li>
+        <li><a href="{% url 'about' %}">about</a></li>
+    </ul>
+
+    <div class="nav-user">
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn">logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn">login</a>
+            <a href="{% url 'signup' %}" class="btn">signup</a>
+        {% endif %}
+    </div>  
+{% endblock navigation %}
+
+{% block content %}
+    <div class="about-container">
+        <h1>About Blogger.</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente sunt, ullam voluptas recusandae id dolores expedita at! Quaerat, ratione labore iste quis error consectetur.</p>
+        
+        <p>Ab, harum eius nisi accusamus eaque exercitationem quisquam consectetur voluptates quidem nobis dolor nulla libero deleniti quas, dignissimos, quae porro doloremque rerum provident error officia voluptatum aut. Deserunt eum voluptas minima accusantium animi consectetur architecto incidunt! Provident corrupti placeat enim eveniet explicabo esse dolor nam veniam maxime.</p>
+        
+        <p>Quae recusandae itaque dolore provident dicta modi totam iure dolorem quam expedita facere, assumenda similique exercitationem sapiente quisquam saepe animi quos. Magni cupiditate labore rerum beatae corporis voluptatum ea!</p>
+
+        <h2>Leadership</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ducimus sapiente eaque nisi at voluptas odio? Et corrupti nemo quam facilis sit, nam accusamus illum fugit vitae cumque officia</p>
+        
+        <p>sequi eos quo repellendus aliquam. Ipsa officiis perspiciatis nobis voluptatem tempore soluta in enim repellat magni, beatae iste quas, illum amet dolores. Omnis voluptas, consequatur reprehenderit illum labore perspiciatis commodi sit.</p>    
+
+        <h2>Developer</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed at accusamus asperiores ratione autem distinctio dolorem aut quae maxime dolorum, reprehenderit repellat tempore quam laudantium possimus itaque debitis eligendi minus vitae quisquam cum recusandae? Laudantium illum accusamus odit sint fuga! Quas totam ipsum, doloremque quod explicabo illum beatae nesciunt velit?</p>
+    </div>
+{% endblock content %}
